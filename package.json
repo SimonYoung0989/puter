@@ -6,7 +6,7 @@
   "description": "Desktop environment in the browser!",
   "homepage": "https://puter.com",
   "type": "module",
-  "main": "functions/exports.js",
+  "main": "functions/run-selfhosted.js",
   "directories": {
     "lib": "lib"
   },
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "test": "mocha ./packages/phoenix/test ./packages/phoenix/packages/contextlink/test",
-    "build": "netlify-lambda build",
+    "build": "netlify-lambda build express",
     "start": "nodemon run-selfhosted.js",
     "check-translations": "node tools/check-translations.js",
     "postinstall": "cd packages/phoenix && cd packages/contextlink && npm install && cd - && cd packages/strataparse && npm install && cd - && cd packages/pty && npm install"
