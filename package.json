@@ -6,7 +6,7 @@
   "description": "Desktop environment in the browser!",
   "homepage": "https://puter.com",
   "type": "module",
-  "main": "exports.js",
+  "main": "functions/exports.js",
   "directories": {
     "lib": "lib"
   },
@@ -23,9 +23,8 @@
   },
   "scripts": {
     "test": "mocha ./packages/phoenix/test ./packages/phoenix/packages/contextlink/test",
-    "start=gui": "nodemon --exec \"node dev-server.js\" ",
-    "start": "node run-selfhosted.js",
-    "build": "node ./build.js",
+    "build": "netlify-lambda build",
+    "start": "nodemon run-selfhosted.js",
     "check-translations": "node tools/check-translations.js",
     "postinstall": "cd packages/phoenix && cd packages/contextlink && npm install && cd - && cd packages/strataparse && npm install && cd - && cd packages/pty && npm install"
   },
